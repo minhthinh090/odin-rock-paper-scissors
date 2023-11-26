@@ -3,18 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" >
     <script src="my-script.js" defer></script>
     <title>Document</title>
 </head>
 <body>
-    <button id="scissors">Scissors</button>
-    <button id="rock">Rock</button>
-    <button id="paper">Paper</button>
-    <div id="roundWinner"></div>
-    <div>
-        <div>Your score: <span id="showPlayerScore"></span></div>
-        <div>Computer score: <span id="showComputerScore"></span></div>
+    <div id="header">
+        <h1>My awesome Rock-Paper-Scissors</h1>
     </div>
-    <div id='announceWinner'></div>  
+    <div id="container">
+        <ul class="box">
+            <button id="scissors" class="choice">✂️</button>
+            <button id="rock" class="choice">🪨</button>
+            <button id="paper" class="choice">🖐️</button>
+        </ul>
+        <div id="roundWinner"></div>
+        <div class="score">
+            <div id="playerScore">
+                <div>Your score</div>
+                <div id="showPlayerScore"></div>
+            </div>
+            <div id="computerScore">
+                <div>Computer score</div>
+                <div id="showComputerScore"></div>
+            </div>
+        </div>
+        <div id='announceWinner'></div>
+        <button id="playAgain">Play again</button> 
+    </div>
+    <div id="footer">
+        Made by minhthinh090
+    </div>
+     
 </body>
 </html>

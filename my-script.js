@@ -36,8 +36,13 @@ function playRound(playerSelection, computerSelection)
 
 let playerScore = 0;
 let computerScore = 0;
-const btn = document.querySelectorAll('button');
+const btn = document.querySelectorAll('button.choice');
 const roundWinner = document.querySelector('#roundWinner');
+
+let playAgain = document.querySelector('#playAgain');
+playAgain.style.display = 'none';
+const winner = document.querySelector('#announceWinner');
+
 function updateScore(roundWinner)
 {
     const showPlayerScore = document.querySelector('#showPlayerScore');
@@ -51,14 +56,24 @@ function updateScore(roundWinner)
         showComputerScore.textContent = ++computerScore;
     }
 
-    const winner = document.querySelector('#announceWinner');
     if (playerScore === 5)
     {
+        winner.style.backgroundColor = 'green';
         winner.textContent = "YOU WIN THE GAME!";
+        playAgain.style.display="";
+        btn.forEach(button => {
+            button.disabled = true; 
+          });
     }
+
     else if (computerScore === 5)
     {
-        winner.textContent = "YOU LOSE THE GAME!";
+        winner.style.backgroundColor = 'red';
+        winner.textContent = "YOU LOSE THE GAME!";  
+        playAgain.style.display=""; 
+        btn.forEach(button => {
+            button.disabled = true; 
+          });
     }
 }
 
@@ -67,4 +82,24 @@ btn.forEach(button => {
         roundWinner.textContent = playRound(button.id, getComputerChoice());
         updateScore(roundWinner.textContent);
     })
+})
+
+playAgain.addEventListener('click', () => {
+    playerScore = 0;
+    computerScore = 0;
+  
+    // Clear winner announcement
+    winner.textContent = '';
+    winner.style.backgroundColor = '';
+  
+    // Reset UI
+    showPlayerScore.textContent = 0; 
+    showComputerScore.textContent = 0;
+  
+    // Hide Play Again button
+    roundWinner.textContent = '';
+    playAgain.style.display = 'none'; 
+    btn.forEach(button => {
+        button.disabled = false; 
+      });
 })
