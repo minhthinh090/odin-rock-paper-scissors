@@ -1,0 +1,96 @@
+#header
+{
+    background-color: #a39274;
+    text-align: center;
+    color: darkblue;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;  
+}
+.box
+{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+button {
+    background: yellowgreen;
+    color: white;
+    border: none;
+    padding: 20px;
+    font: inherit;
+    font-size: 1.6rem;
+    cursor: pointer;
+    outline: inherit;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px #000;
+  }
+
+#roundWinner{
+    text-align:end;
+    padding: 40px;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+#container{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.score{
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+#playerScore,#computerScore{
+    text-align: center;
+}
+
+#announceWinner{
+    text-align: center;
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#playAgain {
+    display: block; 
+    padding: 4px 12px;
+    background-color: #6fbf44;
+    color: white;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    cursor: pointer; 
+    width: 400px;  
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+  }
+  
+  #playAgain:hover {
+    background-color: #5b9f36;
+  }
+  
+  #playAgain:active {
+    background-color: #47882e;  
+  }
+
+  #footer {
+    text-align: center;
+    background-color: #1F2937;
+    color: #E5E7EB;
+    font-size: 20px;
+  }
+
